@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Min hemsida</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #F9E7C9;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Hamburgermenyn */
+        .menu-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 6px 0;
+        }
+
+        /* Menyn som öppnas */
+        .menu {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: rgba(0,0,0,0.8);
+            padding: 15px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Hamburgermenyn -->
+<div class="menu-icon" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<!-- Menyinnehåll -->
+<div class="menu" id="menu">
+    <a href="#">Produkter</a>
+    <a href="#">Om</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        if (menu.style.display === "block") {
+            menu.style.display = "none";
+        } else {
+            menu.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
