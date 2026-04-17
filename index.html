@@ -1,80 +1,118 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <title>Min hemsida</title>
+<meta charset="UTF-8">
+<title>Min hemsida</title>
 
-    <style>
-        body {
-            margin: 0;
-            background-color: #F9E7C9;
-            font-family: Arial, sans-serif;
-        }
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
-        /* Hamburgermenyn */
-        .menu-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-        }
+<style>
+body {
+    margin: 0;
+    background-color: #F9E7C9;
+    font-family: 'Montserrat', sans-serif;
+}
 
-        .bar {
-            width: 30px;
-            height: 4px;
-            background-color: white;
-            margin: 6px 0;
-        }
+/* Rubrik uppe vänster */
+.title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+}
 
-        /* Menyn som öppnas */
-        .menu {
-            position: absolute;
-            top: 60px;
-            right: 20px;
-            background-color: rgba(0,0,0,0.8);
-            padding: 15px;
-            border-radius: 10px;
-            display: none;
-        }
+/* Hamburgermenyn */
+.menu-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
 
-        .menu a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            margin: 10px 0;
-            font-size: 18px;
-        }
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 6px 0;
+}
 
-        .menu a:hover {
-            text-decoration: underline;
-        }
-    </style>
+/* Fullhöjdsmeny */
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #3A2606; /* ändra färg här */
+    padding-top: 80px;
+    display: none;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
+.menu a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Bilder + scroll */
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section img {
+    max-width: 80%;
+    border-radius: 10px;
+}
+</style>
 </head>
 
 <body>
 
-<!-- Hamburgermenyn -->
-<div class="menu-icon" onclick="toggleMenu()">
+<div class="title">Min hemsida</div>
+
+<!-- Hamburgermeny -->
+<div class="menu-icon" onclick="openMenu()">
     <div class="bar"></div>
     <div class="bar"></div>
     <div class="bar"></div>
 </div>
 
-<!-- Menyinnehåll -->
-<div class="menu" id="menu">
+<!-- Meny -->
+<div class="menu" id="menu" onmouseleave="closeMenu()">
     <a href="#">Produkter</a>
     <a href="#">Om</a>
 </div>
 
+<!-- Bilder -->
+<div class="section">
+    <img src="bild1.jpg" alt="Bild 1">
+</div>
+
+<div class="section">
+    <img src="bild2.jpg" alt="Bild 2">
+</div>
+
 <script>
-    function toggleMenu() {
-        var menu = document.getElementById("menu");
-        if (menu.style.display === "block") {
-            menu.style.display = "none";
-        } else {
-            menu.style.display = "block";
-        }
-    }
+function openMenu() {
+    document.getElementById("menu").style.display = "block";
+}
+
+function closeMenu() {
+    document.getElementById("menu").style.display = "none";
+}
 </script>
 
 </body>
