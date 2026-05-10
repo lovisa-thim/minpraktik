@@ -51,11 +51,21 @@ body {
     position: fixed;
     top: 150px;
     left: 0;
-    width: 72%;
+    width: calc(100% - 430px);
     height: 4px;
     background-color: var(--brown);
     z-index: 9;
     transition: opacity 0.4s ease;
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    top: 108px;
+    right: -90px;
+    width: 70px;
+    height: 4px;
+    background-color: var(--brown);
 }
 
 /* Meny */
@@ -83,7 +93,7 @@ body {
 
 /* Bildområde */
 .gallery {
-    width: 68%;
+    width: calc(100% - 520px);
     margin-left: 8%;
     padding-top: 190px;
     padding-bottom: 120px;
@@ -209,7 +219,7 @@ body {
     <div class="image-card">
         <img src="bild1.jpg" alt="The lamp">
         <div class="overlay">
-            <div class="overlay-text">THE LAMP</div>
+            <div class="overlay-text">1 000 000$</div>
         </div>
     </div>
 
