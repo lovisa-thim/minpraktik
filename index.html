@@ -63,7 +63,7 @@ body {
     height: 4px;
     background-color: var(--brown);
     z-index: 1;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.2s ease;
 }
 
 
@@ -257,7 +257,7 @@ body {
 
 
     <div class="image-card">
-        <img src="bild3.jpg" alt="Ny bild">
+        <img src="bild3.png" alt="ryggsäck">
         <div class="overlay">
             <div class="overlay-text">NY TEXT</div>
         </div>
@@ -282,7 +282,7 @@ window.addEventListener("scroll", function() {
     const line = document.getElementById("topLine");
     const scrollAmount = window.scrollY;
 
-    if (scrollAmount > 80) {
+    if (scrollAmount > 60) {
         line.style.opacity = "0";
     } else {
         line.style.opacity = "1";
