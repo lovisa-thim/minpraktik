@@ -112,26 +112,26 @@ body {
     padding-top: 190px;
     padding-bottom: 120px;
 
-    display: grid;
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
-    gap: 10px 45px;
-    align-items: start;
+    display: flex;
+    gap: 45px;
+    align-items: flex-start;
 }
 
-/* Lite asymmetri */
-.image-card:nth-child(2n) {
-    margin-top: 35px;
+.column {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
-.image-card:nth-child(3n) {
-    margin-top: -10px;
+.right-column {
+    padding-top: 110px;
 }
 
 .image-card {
     position: relative;
-    width: 110%;
+    width: 100%;
     overflow: visible;
-
     transition: transform 0.3s ease;
 }
 
@@ -139,9 +139,8 @@ body {
     transform: translateY(-4px);
 }
 
-.image-card:nth-child(2) {
+.right-column .image-card {
     width: 95%;
-    margin-top: 110px;
 }
 
 .image-card img {
@@ -241,19 +240,36 @@ body {
 
 <main class="gallery">
 
-    <div class="image-card">
-        <img src="bild1.jpg" alt="The lamp">
-        <div class="overlay">
-            <div class="overlay-text">1 000 000$</div>
+    <div class="column left-column">
+
+        <div class="image-card">
+            <img src="bild1.jpg" alt="The lamp">
+            <div class="overlay">
+                <div class="overlay-text">1 000 000$</div>
+            </div>
         </div>
+
+        <div class="image-card">
+            <img src="bild3.png" alt="ryggsäck">
+            <div class="overlay">
+                <div class="overlay-text">NY TEXT</div>
+            </div>
+        </div>
+
     </div>
 
-    <div class="image-card">
-        <img src="bild2.jpg" alt="The chair">
-        <div class="overlay">
-            <div class="overlay-text">THE CHAIR</div>
+    <div class="column right-column">
+
+        <div class="image-card">
+            <img src="bild2.jpg" alt="The chair">
+            <div class="overlay">
+                <div class="overlay-text">THE CHAIR</div>
+            </div>
         </div>
+
     </div>
+
+</main>
 
 
     <div class="image-card">
